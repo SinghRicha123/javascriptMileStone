@@ -1,0 +1,102 @@
+q.1.
+
+let input = "Hello, world!";
+setTimeout(() => {
+  let reversedString = input.split("").reverse().join("");
+  console.log(reversedString);
+}, 2000);
+
+q.2.
+
+let delay = 3000; // delay in milliseconds
+let remainingTime = delay / 1000; // remaining time in seconds
+let countdown = setInterval(() => {
+  console.log(`${remainingTime} seconds until random number generation...`);
+  remainingTime--;
+}, 1000);
+setTimeout(() => {
+  clearInterval(countdown); // stop the countdown
+  let randomNumber = Math.floor(Math.random() * 100) + 1; // generate a random number between 1 and 100
+  console.log(`Random number generated: ${randomNumber}`);
+}, delay);
+
+q.3.
+
+const inventory = {
+    "item1": 10, // price in USD
+    "item2": 20,
+    "item3": 30,
+    // add more items and prices as needed
+  };
+  const exchangeRate = 80; // 1 USD = 80 INR
+  console.log(Object.entries(inventory));
+  const convertedInventory = Object.entries(inventory).map(([item, price]) => {
+    const priceInRupees = price * exchangeRate;
+    return [item, priceInRupees];
+  });
+  const inventoryInRupees = Object.fromEntries(convertedInventory);
+  console.log(inventoryInRupees);
+
+q.4.
+
+const books = [
+  { title: 'The Hunger Games', author: 'Suzanne Collins', year: 2008 },
+  { title: 'Harry Potter and the Deathly Hallows', author: 'J.K. Rowling', year: 2007 },
+  { title: 'The Girl with the Dragon Tattoo', author: 'Stieg Larsson', year: 2005 },
+  { title: 'The Help', author: 'Kathryn Stockett', year: 2009 },
+  { title: 'The Fault in Our Stars', author: 'John Green', year: 2012 },
+  { title: 'Gone Girl', author: 'Gillian Flynn', year: 2012 },
+  { title: 'Divergent', author: 'Veronica Roth', year: 2011 },
+  { title: 'The Maze Runner', author: 'James Dashner', year: 2009 },
+];
+const filteredBooks = books.filter(book => book.year >= 2010).map(book => ({ title: book.title, author: book.author.toUpperCase() }));
+console.log(filteredBooks);
+Output: [
+  { title: 'The Fault in Our Stars', author: 'JOHN GREEN' },
+  { title: 'Gone Girl', author: 'GILLIAN FLYNN' },
+  { title: 'Divergent', author: 'VERONICA ROTH' },
+]
+
+q.5.
+
+const regex = /^https?:\/\/[\w\d\S]+\.[\w]+$/;
+function isValidURL(url) {
+  if (regex.test(url)) {
+    console.log(`${url} is a valid URL`);
+  } else {
+    console.log(`${url} is not a valid URL`);
+  }
+}
+Example usage:
+isValidURL('http://www.example.com'); // valid URL
+isValidURL('https://www.example.com/path/file.html'); // valid URL
+isValidURL('ftp://www.example.com'); // not a valid URL
+isValidURL('https://www.example.com/path/with spaces/'); // not a valid URL
+
+q.6.
+
+const regex = /^https:\/\/www\.linkedin\.com\/in\/[a-z0-9_-]{5,30}[a-z0-9]$/i;
+function isValidLinkedInURL(url) {
+  if (regex.test(url)) {
+    console.log(`${url} is a valid LinkedIn profile URL`);
+  } else {
+    console.log(`${url} is not a valid LinkedIn profile URL`);
+  }
+}
+// Example usage:
+isValidLinkedInURL('https://www.linkedin.com/in/john-doe-1234567a'); // valid URL
+isValidLinkedInURL('https://www.linkedin.com/in/jane_doe'); // valid URL
+isValidLinkedInURL('https://www.linkedin.com/in/joe_smith1234567890'); // not a valid URL (too long)
+isValidLinkedInURL('http://www.linkedin.com/in/john-doe-1234567a'); // not a valid URL (wrong protocol)
+isValidLinkedInURL('https://www.linkedin.com/in/john.doe'); // not a valid URL (invalid character)
+
+
+
+
+
+
+
+
+
+
+

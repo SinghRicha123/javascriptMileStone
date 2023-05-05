@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm password validation</title>
+    <style>
+        div{
+            width: 200px;
+            margin-left: 40%;
+            margin-top: 20%;
+            background-color: aliceblue;
+            box-shadow: 2px 2px 5px black;
+            border-radius: 5px;
+            padding: 30px;
+        }
+        input{
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+<body>
+     <div>
+        <form onsubmit = "return verifyPassword()">
+        
+            <label for="">Password</label><br>
+            <input type="password" id="pass"><br>
+            <label for="">Confirm Password</label><br>
+            <input type="password" id="confirmPass"><br>
+
+            <input type="submit" value="submit">
+            <input type="reset" value="Reset">
+            <p id="message"></p>
+        </form>
+     </div>
+
+     <script>
+        function verifyPassword(){
+            let pass = document.getElementById("pass").value;
+
+            let Cpass = document.getElementById("confirmPass").value;
+
+            if(pass != Cpass){
+                message.textContent="Password not match";
+
+            }
+            else{
+                message.textContent="Password  match";
+            }
+        }
+     </script>
+</body>
+</html>
